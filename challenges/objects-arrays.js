@@ -13,7 +13,7 @@ const tyrannosaurus = {
   weight: "700kg",
   length: "12m",
   period: "Late Cretaceous",
-  roar: function() {
+  roar: () => {
     return `RAWERSRARARWERSARARARRRR!`;
   }
 }
@@ -74,9 +74,7 @@ const graduates = [
 Once you have the new array created, sort the universities alphabetically and log the result. */
 let universities = [];
 
-universities = graduates.map(function(graduate) {
-  return graduate.university;
-})
+universities = graduates.map(graduate => graduate.university);
 universities.sort();
 
 console.log(universities);
@@ -89,18 +87,14 @@ The resulting contact information strings should have a space between the first 
 Log the result of your new array. */
 let contactInfo = [];
 
-contactInfo = graduates.map(function(graduate){
-  return `${graduate.first_name} ${graduate.email}`;
-})
+contactInfo = graduates.map(graduate => `${graduate.first_name} ${graduate.email}`)
 
 console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
 let unisWithUni = [];
 
-unisWithUni = graduates.filter(function(graduate){
-  return graduate.university.includes("Uni");
-})
+unisWithUni = graduates.filter(graduate => graduate.university.includes("Uni"))
 
 console.log(unisWithUni);
 
@@ -129,9 +123,7 @@ The zoos want to display both the scientific name and the animal name in front o
 */
 let displayNames = [];
 
-zooAnimals.forEach(function(animal){
-  displayNames.push(`Name: ${animal.animal_name}, Scientific: ${animal.scientific_name}.`)
-})
+zooAnimals.forEach(animal => displayNames.push(`Name: ${animal.animal_name}, Scientific: ${animal.scientific_name}.`))
 
 console.log(displayNames);
 
@@ -142,9 +134,7 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 */
 let lowCaseAnimalNames = [];
 
-lowCaseAnimalNames = zooAnimals.map(function(animal){
-  return animal.animal_name.toLowerCase()
-})
+lowCaseAnimalNames = zooAnimals.map(animal => animal.animal_name.toLowerCase());
 
 console.log(lowCaseAnimalNames);
 
@@ -155,9 +145,7 @@ The zoos are concerned about animals with a lower population count. Using filter
 */
 let lowPopulationAnimals = [];
 
-lowPopulationAnimals = zooAnimals.filter(function(animal) {
-  return animal.population < 5;
-})
+lowPopulationAnimals = zooAnimals.filter(animal => animal.population < 5)
 
 console.log(lowPopulationAnimals);
 
@@ -168,9 +156,7 @@ The zoos need to know their total animal population across the United States. Fi
 */
 let populationTotal = 0;
 
-populationTotal = zooAnimals.reduce(function(total, animal){
-  return total + animal.population;
-}, 0)
+populationTotal = zooAnimals.reduce((total, animal) => total + animal.population, 0)
 
 console.log(populationTotal); 
 
